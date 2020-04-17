@@ -143,7 +143,6 @@ def iterate_pagerank(corpus, damping_factor):
 
             # d probability
             s_prob = 0
-            print(page)
             for p, l in corpus.items():
                 if page in l:
                     s_prob += page_rank[p] / len(l)
