@@ -22,6 +22,7 @@ def backtrack(assignment):
         return assignment
 
     var = select_unassigned_var(assignment)
+    print(var.__str__())
 
     for val in ['Monday', 'Tuesday', 'Wednesday']:
         new_assignment = assignment.copy()

@@ -9,9 +9,18 @@ output = 'crossword/output.png'
 
 # Generate crossword
 crossword = cw.Crossword(structure, words)
+
 creator = generate.CrosswordCreator(crossword)
+creator.enforce_node_consistency()
+creator.ac3()
 
+print(creator.domains)
 
+# Variable(6, 5, 'across', 6): ['REASON', 'SEARCH']
 
-def test_node_consistency():
-    print(creator.domains)
+creator.select_unassigned_variable(dict())
+
+# assignment = creator.backtrack(dict())
+#
+# print(assignment)
+# creator.print(assignment)
