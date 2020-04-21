@@ -135,8 +135,8 @@ def evaluate(labels, predictions):
         elif label == pred == 0:
             specificity += 1
 
-    sensitivity /= len(labels)
-    specificity /= len(labels)
+    sensitivity /= sum(labels)
+    specificity /= (len(labels) - sum(labels))
 
     return (sensitivity, specificity)
 
