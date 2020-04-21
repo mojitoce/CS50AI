@@ -186,7 +186,6 @@ class CrosswordCreator():
         cw_unique_words = set(w for v, w in assignment.items())
         cw_words = [w for v,w in assignment.items()]
         if len(cw_unique_words) != len(cw_words):
-            print('Words in CW not unique')
             return False
 
         # No conflicts in overlaps
@@ -269,10 +268,8 @@ class CrosswordCreator():
             return assignment
 
         var = self.select_unassigned_variable(assignment)
-        print(var.__str__())
 
         for value in self.order_domain_values(var, assignment):
-            print(value)
             new_assignment = assignment.copy()
             new_assignment[var] = value
 
